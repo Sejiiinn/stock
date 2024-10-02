@@ -5,8 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 public class Stock {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +18,6 @@ public class Stock {
 
 	@Getter
 	private Long quantity;
-
-	public Stock() {
-	}
 
 	public Stock(Long productId, Long quantity) {
 		this.productId = productId;
