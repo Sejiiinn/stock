@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +19,9 @@ public class Stock {
 
 	@Getter
 	private Long quantity;
+
+	@Version // javax.persistence 패키지를 사용해야 함. Java17 이상은 jakarta.persistence
+	private Long version;
 
 	public Stock(Long productId, Long quantity) {
 		this.productId = productId;
